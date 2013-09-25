@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EHViewController : UIViewController
+@interface EHViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+
+@property (nonatomic, weak) IBOutlet UICollectionView *mCollectionMenu;
+
+- (IBAction)clickMenu:(id)sender;
 
 @end
