@@ -647,6 +647,7 @@
 				43B7EDD517F33689000D873B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43B7EDD617F33689000D873B /* Build configuration list for PBXNativeTarget "EnjoyHondaTests" */ = {
 			isa = XCConfigurationList;
@@ -655,6 +656,7 @@
 				43B7EDD817F33689000D873B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

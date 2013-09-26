@@ -104,7 +104,7 @@
                         <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rWE-Vl-3bm">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" delaysContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rWE-Vl-3bm">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
@@ -384,10 +384,15 @@
     </scenes>
     <resources>
         <image name="bg_textfield.png" width="234" height="35"/>
+        <image name="bg_textfield.png" width="234" height="35"/>
         <image name="btn_dropdown.png" width="35" height="35"/>
         <image name="btn_menu.png" width="19" height="17"/>
         <image name="btn_search.png" width="35" height="35"/>
         <image name="line.png" width="1" height="1"/>
+        <image name="line.png" width="1" height="1"/>
+        <image name="line.png" width="1" height="1"/>
+        <image name="logo.png" width="107" height="23"/>
+        <image name="logo.png" width="107" height="23"/>
         <image name="logo.png" width="107" height="23"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
