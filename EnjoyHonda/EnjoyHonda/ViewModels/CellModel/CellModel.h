@@ -10,4 +10,6 @@
 
 @interface CellModel : UICollectionViewCell
 
+@property (nonatomic, weak) IBOutlet UIView *mViewHighlight;
+
 @end

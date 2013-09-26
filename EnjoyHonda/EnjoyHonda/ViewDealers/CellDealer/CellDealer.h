@@ -1,5 +1,5 @@
 //
-//  ViewDealers.h
+//  CellDealer.h
 //  EnjoyHonda
 //
 //  Created by saranpol on 9/26/56 BE.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewDealers : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface CellDealer : UICollectionViewCell
+
 
 @end
