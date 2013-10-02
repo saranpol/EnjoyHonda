@@ -9,6 +9,7 @@
 #import "ViewModelDetail.h"
 #import "CellModelTitle.h"
 #import "CellModelPrice.h"
+#import "CellModelRemark.h"
 #import "CellModelFeature.h"
 
 @implementation ViewModelDetail
@@ -42,6 +43,11 @@
         return cell;
     }
 
+    if(i <= 4){
+        CellModelRemark *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CellModelRemark" forIndexPath:indexPath];
+        return cell;
+    }
+
     if(i <= 8){
         CellModelFeature *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CellModelFeature" forIndexPath:indexPath];
         return cell;
@@ -68,6 +74,10 @@
     
     if(i <= 3)
         return CGSizeMake(286, 40);
+
+    if(i <= 4)
+        return CGSizeMake(286, 70);
+
     
     if(i <= 8)
         return CGSizeMake(286, 184 + 255);

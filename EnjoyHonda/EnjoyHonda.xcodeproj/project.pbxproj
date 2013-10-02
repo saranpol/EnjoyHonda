@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		433BEEA017FCD1C700CCD389 /* CellModelRemark.m in Sources */ = {isa = PBXBuildFile; fileRef = 433BEE9F17FCD1C700CCD389 /* CellModelRemark.m */; };
 		4366240C17F4D7100026A6C8 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 4366240B17F4D7100026A6C8 /* test.png */; };
 		4366240E17F4D7880026A6C8 /* test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4366240D17F4D7880026A6C8 /* test2.png */; };
 		4366241617F4E2930026A6C8 /* CellModelBrochure.m in Sources */ = {isa = PBXBuildFile; fileRef = 4366241517F4E2930026A6C8 /* CellModelBrochure.m */; };
@@ -62,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		433BEE9E17FCD1C700CCD389 /* CellModelRemark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellModelRemark.h; sourceTree = "<group>"; };
+		433BEE9F17FCD1C700CCD389 /* CellModelRemark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellModelRemark.m; sourceTree = "<group>"; };
 		4366240B17F4D7100026A6C8 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		4366240D17F4D7880026A6C8 /* test2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test2.png; sourceTree = "<group>"; };
 		4366241417F4E2930026A6C8 /* CellModelBrochure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellModelBrochure.h; sourceTree = "<group>"; };
@@ -146,6 +149,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		433BEE9D17FCD1C700CCD389 /* CellModelRemark */ = {
+			isa = PBXGroup;
+			children = (
+				433BEE9E17FCD1C700CCD389 /* CellModelRemark.h */,
+				433BEE9F17FCD1C700CCD389 /* CellModelRemark.m */,
+			);
+			path = CellModelRemark;
+			sourceTree = "<group>";
+		};
 		4366240F17F4E2260026A6C8 /* CellModelBrochure */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +382,7 @@
 				4366240F17F4E2260026A6C8 /* CellModelBrochure */,
 				4366241017F4E2260026A6C8 /* CellModelFeature */,
 				4366241117F4E2260026A6C8 /* CellModelPrice */,
+				433BEE9D17FCD1C700CCD389 /* CellModelRemark */,
 				4366241217F4E2260026A6C8 /* CellModelSeparator */,
 				4366241317F4E2260026A6C8 /* CellModelTitle */,
 				43B7EE2B17F3AD0F000D873B /* ViewModelDetail.h */,
@@ -498,6 +511,7 @@
 				43B7EDAE17F33689000D873B /* main.m in Sources */,
 				4366241917F4E2A60026A6C8 /* CellModelFeature.m in Sources */,
 				4366242217F4E2DB0026A6C8 /* CellModelTitle.m in Sources */,
+				433BEEA017FCD1C700CCD389 /* CellModelRemark.m in Sources */,
 				43B7EE2D17F3AD0F000D873B /* ViewModelDetail.m in Sources */,
 				43B7EDF317F36164000D873B /* ViewModels.m in Sources */,
 				43B7EDDD17F33F3A000D873B /* CellMenu.m in Sources */,
