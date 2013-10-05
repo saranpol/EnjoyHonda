@@ -10,4 +10,12 @@
 
 @interface ViewModelDetail : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
+@property (nonatomic, weak) IBOutlet UICollectionView *mCollectionView;
+@property (nonatomic, strong) NSDictionary *mData;
+@property (nonatomic, strong) NSString *mModelID;
+
+- (void)setup:(NSString*)model_id;
+
+
+
 @end

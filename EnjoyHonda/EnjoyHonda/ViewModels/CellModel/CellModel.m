@@ -11,6 +11,7 @@
 @implementation CellModel
 
 @synthesize mViewHighlight;
+@synthesize mImage;
 
 - (void)setHighlighted:(BOOL)highlighted
 {

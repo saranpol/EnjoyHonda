@@ -10,10 +10,14 @@
 #import "CellMenu.h"
 #import "ViewModels.h"
 #import "ViewDealers.h"
+#import "API.h"
+#import "UIImageView+WebCache.h"
 
 @implementation EHViewController
 
 @synthesize mCollectionMenu;
+@synthesize mImageHilight;
+@synthesize mCountHilight;
 
 - (void)viewDidLoad
 {
@@ -21,6 +25,10 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
+ 
+    [mCollectionMenu setHidden:YES];
+    
+    [self updateUI];
 }
 
 - (void)didReceiveMemoryWarning
@@ -28,6 +36,60 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self updateData];
+}
+
+- (void)updateData {
+    API *a = [API getAPI];
+    
+    [a api_hilight:^(id JSON){
+        NSDictionary *json = (NSDictionary*)JSON;
+        [a saveObject:json forKey:M_hilight];
+        [self updateUI];
+    }failure:^(NSError* error){
+    }];
+
+}
+
+- (void)updateUI {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(updateUI) object:nil];
+    
+    API *a = [API getAPI];
+    NSDictionary *data = [a getObject:M_hilight];
+    if(data){
+        NSArray *hilight = [data objectForKey:@"hilight"];
+        if(hilight){
+            if(mCountHilight >= [hilight count])
+                self.mCountHilight = 0;
+            
+            NSDictionary *item = [hilight objectAtIndex:mCountHilight];
+            NSString *image = [item objectForKey:@"image_mobile"];
+            
+            [mImageHilight setImageWithURL:[NSURL URLWithString:image]
+                          placeholderImage:mImageHilight.image
+                                 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType){
+                                     if(image){
+                                         [UIView transitionWithView:mImageHilight
+                                                           duration:1.0f
+                                                            options:UIViewAnimationOptionTransitionCrossDissolve
+                                                         animations:^{
+                                                             mImageHilight.image = image;
+                                                         } completion:^(BOOL finished){
+                                                             mCountHilight++;
+                                                             [self performSelector:@selector(updateUI) withObject:nil afterDelay:3.0];
+                                                         }];
+                                     }
+                                 }];
+        }
+        
+    }
+}
+
+
+
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

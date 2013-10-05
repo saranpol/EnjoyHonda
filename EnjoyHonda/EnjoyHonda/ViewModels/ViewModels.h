@@ -10,4 +10,7 @@
 
 @interface ViewModels : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
+@property (nonatomic, weak) IBOutlet UICollectionView *mCollectionView;
+@property (nonatomic, strong) NSArray *mArrayModels;
+
 @end

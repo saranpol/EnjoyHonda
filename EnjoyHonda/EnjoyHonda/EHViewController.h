@@ -11,6 +11,8 @@
 @interface EHViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UICollectionView *mCollectionMenu;
+@property (nonatomic, weak) IBOutlet UIImageView *mImageHilight;
+@property (nonatomic, assign) NSInteger mCountHilight;
 
 - (IBAction)clickMenu:(id)sender;
 

@@ -11,5 +11,6 @@
 @interface CellModel : UICollectionViewCell
 
 @property (nonatomic, weak) IBOutlet UIView *mViewHighlight;
+@property (nonatomic, weak) IBOutlet UIImageView *mImage;
 
 @end
