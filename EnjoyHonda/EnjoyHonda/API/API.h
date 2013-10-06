@@ -18,6 +18,7 @@
 #define M_hilight @"M_hilight_1"
 #define M_models @"M_models_1"
 #define M_model @"M_model_"
+#define M_dealers @"M_dealters"
 
 extern NSString *sShareURL;
 
@@ -65,13 +66,18 @@ typedef void (^APIFail)(NSError*);
           success:(APISuccess)success
           failure:(APIFail)failure;
 
+- (void)api_dealer:(APISuccess)success
+           failure:(APIFail)failure;
+
+
 
 // Image
 - (void)loadImage:(UIImageView*)v url:(NSString*)url;
 
 // Text
 - (CGFloat)getHeightOfFont:(UIFont*)font w:(CGFloat)w text:(NSString*)text;
-
+- (NSString*)getText:(NSDictionary*)d key:(NSString*)key def:(NSString*)def;
+- (NSString*)getText:(NSDictionary*)d key:(NSString*)key;
 
 // Facebook
 //- (BOOL)isFacebookLogin;

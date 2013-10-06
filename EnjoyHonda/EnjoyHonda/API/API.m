@@ -252,6 +252,13 @@ NSString *sShareURL = @"http://thailandweddingshoneymoons.com";
     
 }
 
+- (void)api_dealer:(APISuccess)success
+           failure:(APIFail)failure
+{
+    NSMutableDictionary *params = [self initialParam];
+    [self api_call:@"dealer" https:NO params:params success:success failure:failure];
+}
+
 
 
 //- (void)api_login_facebook_id:(NSString*)facebook_id
@@ -296,7 +303,16 @@ NSString *sShareURL = @"http://thailandweddingshoneymoons.com";
     return rect.size.height;
 }
 
+- (NSString*)getText:(NSDictionary*)d key:(NSString*)key def:(NSString*)def {
+    NSString *text = [d objectForKey:key];
+    if(!text || text == (id)[NSNull null] || [text length] == 0)
+        return def;
+    return text;
+}
 
+- (NSString*)getText:(NSDictionary*)d key:(NSString*)key {
+    return [self getText:d key:key def:@""];
+}
 
 
 

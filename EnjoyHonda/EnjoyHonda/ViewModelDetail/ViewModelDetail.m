@@ -89,10 +89,10 @@
     
     if(i == 0){
         CellModelTitle *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CellModelTitle" forIndexPath:indexPath];
-        [a loadImage:cell.mImage url:[mData objectForKey:@"keyvisual_url"]];
-        [cell.mLabelName setText:[mData objectForKey:@"name"]];
-        [cell.mLabelTitle setText:[mData objectForKey:@"title_th"]];
-        [cell.mLabelDescription setText:[mData objectForKey:@"description"]];
+        [a loadImage:cell.mImage url:[a getText:mData key:@"keyvisual_url"]];
+        [cell.mLabelName setText:[a getText:mData key:@"name"]];
+        [cell.mLabelTitle setText:[a getText:mData key:@"title_th"]];
+        [cell.mLabelDescription setText:[a getText:mData key:@"description"]];
         return cell;
     }
 
@@ -103,8 +103,8 @@
         NSInteger j = i - 1;
         CellModelPrice *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CellModelPrice" forIndexPath:indexPath];
         NSDictionary *price = [price_list objectAtIndex:j];
-        [cell.mLabelLabel setText:[price objectForKey:@"label"]];
-        [cell.mLabelValue setText:[price objectForKey:@"value"]];
+        [cell.mLabelLabel setText:[a getText:price key:@"label"]];
+        [cell.mLabelValue setText:[a getText:price key:@"value"]];
         return cell;
     }
 
@@ -118,9 +118,9 @@
         CellModelFeature *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CellModelFeature" forIndexPath:indexPath];
         NSDictionary *feature = [feature_list objectAtIndex:j];
         
-        [a loadImage:cell.mImage url:[feature objectForKey:@"image"]];
-        [cell.mLabelName setText:[feature objectForKey:@"title"]];
-        [cell.mLabelDescription setText:[feature objectForKey:@"description"]];
+        [a loadImage:cell.mImage url:[a getText:feature key:@"image"]];
+        [cell.mLabelName setText:[a getText:feature key:@"title"]];
+        [cell.mLabelDescription setText:[a getText:feature key:@"description"]];
         return cell;
     }
     
@@ -144,7 +144,7 @@
     NSInteger i = indexPath.row;
     API *a = [API getAPI];
     if(i == 0){
-        CGFloat h = [a getHeightOfFont:[UIFont systemFontOfSize:14.0] w:276 text:[mData objectForKey:@"description"]];
+        CGFloat h = [a getHeightOfFont:[UIFont systemFontOfSize:14.0] w:276 text:[a getText:mData key:@"description"]];
         return CGSizeMake(286, 169 + h);
     }
     
@@ -165,7 +165,7 @@
         //CellModelFeature
         NSInteger j = i - 1 - [price_list count] - 1;
         NSDictionary *feature = [feature_list objectAtIndex:j];
-        CGFloat h = [a getHeightOfFont:[UIFont systemFontOfSize:14.0] w:276 text:[feature objectForKey:@"description"]];
+        CGFloat h = [a getHeightOfFont:[UIFont systemFontOfSize:14.0] w:276 text:[a getText:feature key:@"description"]];
         return CGSizeMake(286, 181 + h + 24);
     }
     
@@ -186,10 +186,11 @@
 
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    API *a = [API getAPI];
     if(kind == UICollectionElementKindSectionHeader){
         CellModelHeader *cell = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"HeaderModelDetail" forIndexPath:indexPath];
         if(mData)
-            [cell.mLabelName setText:[NSString stringWithFormat:@"MODELS / %@", [mData objectForKey:@"name"]]];
+            [cell.mLabelName setText:[NSString stringWithFormat:@"MODELS / %@", [a getText:mData key:@"name"]]];
         else
             [cell.mLabelName setText:@"LOADING..."];
         return cell;
@@ -202,6 +203,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
+    API *a = [API getAPI];
     
     NSInteger i = indexPath.row;
     NSArray *price_list = [mData objectForKey:@"price_list"];
@@ -212,11 +214,11 @@
     }
     
     if(i < 1 + [price_list count] + 1 + [feature_list count] + 1){
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[mData objectForKey:@"brochure_url"]]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[a getText:mData key:@"brochure_url"]]];
     }
     
     if(i < 1 + [price_list count] + 1 + [feature_list count] + 1 + 1){
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[mData objectForKey:@"spec_url"]]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[a getText:mData key:@"spec_url"]]];
     }
     
 }

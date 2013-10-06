@@ -68,10 +68,10 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CellModel *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CellModel" forIndexPath:indexPath];
     
-    NSDictionary *item = [mArrayModels objectAtIndex:indexPath.row];
-    NSString *image_color = [item objectForKey:@"image_color"];
-
     API *a = [API getAPI];
+    NSDictionary *item = [mArrayModels objectAtIndex:indexPath.row];
+    NSString *image_color = [a getText:item key:@"image_color"];
+
     [a loadImage:cell.mImage url:image_color];
 
     return cell;

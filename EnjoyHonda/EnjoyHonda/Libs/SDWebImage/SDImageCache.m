@@ -13,7 +13,7 @@
 #import <mach/mach.h>
 #import <mach/mach_host.h>
 
-static const NSInteger kDefaultCacheMaxCacheAge = 60 * 60 * 24 * 7 * 1000000; // 1000000 week
+static const NSInteger kDefaultCacheMaxCacheAge = 60 * 60 * 24 * 7 * 2000; // 2000 week
 
 @interface SDImageCache ()
 

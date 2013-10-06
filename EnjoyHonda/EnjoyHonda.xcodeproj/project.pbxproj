@@ -35,6 +35,8 @@
 		435FAB1A1801241C0091F880 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 435FAB021801241C0091F880 /* logo@2x.png */; };
 		435FAB1B1801241C0091F880 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 435FAB031801241C0091F880 /* test.png */; };
 		435FAB1C1801241C0091F880 /* test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 435FAB041801241C0091F880 /* test2.png */; };
+		435FAB1E1801EC080091F880 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435FAB1D1801EC080091F880 /* MapKit.framework */; };
+		435FAB221801EDB50091F880 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 435FAB211801EDB50091F880 /* TTTAttributedLabel.m */; };
 		4366241617F4E2930026A6C8 /* CellModelBrochure.m in Sources */ = {isa = PBXBuildFile; fileRef = 4366241517F4E2930026A6C8 /* CellModelBrochure.m */; };
 		4366241917F4E2A60026A6C8 /* CellModelFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = 4366241817F4E2A60026A6C8 /* CellModelFeature.m */; };
 		4366241C17F4E2B90026A6C8 /* CellModelPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 4366241B17F4E2B90026A6C8 /* CellModelPrice.m */; };
@@ -134,6 +136,9 @@
 		435FAB021801241C0091F880 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		435FAB031801241C0091F880 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		435FAB041801241C0091F880 /* test2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test2.png; sourceTree = "<group>"; };
+		435FAB1D1801EC080091F880 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		435FAB201801EDB50091F880 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
+		435FAB211801EDB50091F880 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 		4366241417F4E2930026A6C8 /* CellModelBrochure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellModelBrochure.h; sourceTree = "<group>"; };
 		4366241517F4E2930026A6C8 /* CellModelBrochure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellModelBrochure.m; sourceTree = "<group>"; };
 		4366241717F4E2A60026A6C8 /* CellModelFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellModelFeature.h; sourceTree = "<group>"; };
@@ -239,6 +244,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				435FAB1E1801EC080091F880 /* MapKit.framework in Frameworks */,
 				436C7ED417FF33CE00D8CA4D /* SystemConfiguration.framework in Frameworks */,
 				436C7ED217FF33C600D8CA4D /* MobileCoreServices.framework in Frameworks */,
 				43B7EDA417F33689000D873B /* CoreGraphics.framework in Frameworks */,
@@ -343,6 +349,15 @@
 			path = 2x;
 			sourceTree = "<group>";
 		};
+		435FAB1F1801EDB50091F880 /* TTTAttributedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				435FAB201801EDB50091F880 /* TTTAttributedLabel.h */,
+				435FAB211801EDB50091F880 /* TTTAttributedLabel.m */,
+			);
+			path = TTTAttributedLabel;
+			sourceTree = "<group>";
+		};
 		4366240F17F4E2260026A6C8 /* CellModelBrochure */ = {
 			isa = PBXGroup;
 			children = (
@@ -420,6 +435,7 @@
 		436C7E8417FF334E00D8CA4D /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				435FAB1F1801EDB50091F880 /* TTTAttributedLabel */,
 				436C7E8517FF334E00D8CA4D /* AFNetworking */,
 				436C7E9917FF334E00D8CA4D /* SDWebImage */,
 			);
@@ -510,6 +526,7 @@
 		43B7EDA017F33689000D873B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				435FAB1D1801EC080091F880 /* MapKit.framework */,
 				436C7ED317FF33CE00D8CA4D /* SystemConfiguration.framework */,
 				436C7ED117FF33C600D8CA4D /* MobileCoreServices.framework */,
 				43B7EDA117F33689000D873B /* Foundation.framework */,
@@ -811,6 +828,7 @@
 				436C7EC617FF334E00D8CA4D /* SDWebImageCompat.m in Sources */,
 				43B7EDF017F36155000D873B /* ViewDealers.m in Sources */,
 				436C7EBA17FF334E00D8CA4D /* AFHTTPClient.m in Sources */,
+				435FAB221801EDB50091F880 /* TTTAttributedLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

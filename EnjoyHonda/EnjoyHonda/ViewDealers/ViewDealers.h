@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TTTAttributedLabel.h"
 
-@interface ViewDealers : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ViewDealers : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, TTTAttributedLabelDelegate>
+
+@property (nonatomic, weak) IBOutlet UICollectionView *mCollectionView;
+@property (nonatomic, strong) NSArray *mArrayDealers;
+
 
 @end
