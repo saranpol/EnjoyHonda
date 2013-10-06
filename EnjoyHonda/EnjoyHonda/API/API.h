@@ -33,6 +33,7 @@ typedef void (^APIFail)(NSError*);
 
 @property (nonatomic, strong) NSMutableDictionary *mClientInfoDict;
 @property (nonatomic, strong) NSMutableDictionary *mDataDict;
+@property (nonatomic, assign) BOOL mIsTablet;
 //@property (nonatomic, assign) PDViewController *mVC;
 
 // Persistence
@@ -65,6 +66,11 @@ typedef void (^APIFail)(NSError*);
           failure:(APIFail)failure;
 
 
+// Image
+- (void)loadImage:(UIImageView*)v url:(NSString*)url;
+
+// Text
+- (CGFloat)getHeightOfFont:(UIFont*)font w:(CGFloat)w text:(NSString*)text;
 
 
 // Facebook

@@ -58,8 +58,10 @@ NSString *sShareURL = @"http://thailandweddingshoneymoons.com";
     int w = (int)screenRect.size.width;
     int h = (int)screenRect.size.height;
     int tablet = 0;
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
         tablet = 1;
+        self.mIsTablet = YES;
+    }
     
     if ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] &&
         ([UIScreen mainScreen].scale == 2.0)) {
@@ -269,6 +271,33 @@ NSString *sShareURL = @"http://thailandweddingshoneymoons.com";
 
     
     
+
+// #Image
+- (void)loadImage:(UIImageView*)v url:(NSString*)url {
+    UIImageView *iv = v;
+    [v setImageWithURL:[NSURL URLWithString:url]
+             completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType){
+                 if(cacheType!=SDImageCacheTypeMemory){
+                     [iv setAlpha:0.0];
+                     [UIView animateWithDuration:0.3 animations:^{
+                         [iv setAlpha:1.0];
+                     }];
+                 }
+             }];
+}
+
+
+// Text
+- (CGFloat)getHeightOfFont:(UIFont*)font w:(CGFloat)w text:(NSString*)text {
+    NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:text attributes:@{NSFontAttributeName:font}];
+    CGRect rect = [attributedText boundingRectWithSize:(CGSize){w, CGFLOAT_MAX}
+                                               options:NSStringDrawingUsesLineFragmentOrigin
+                                               context:nil];
+    return rect.size.height;
+}
+
+
+
 
 
 

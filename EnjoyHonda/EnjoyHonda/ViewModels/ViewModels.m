@@ -71,16 +71,9 @@
     NSDictionary *item = [mArrayModels objectAtIndex:indexPath.row];
     NSString *image_color = [item objectForKey:@"image_color"];
 
-    [cell.mImage setImageWithURL:[NSURL URLWithString:image_color]
-                       completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType){
-                           if(cacheType!=SDImageCacheTypeMemory){
-                               [cell.mImage setAlpha:0.0];
-                               [UIView animateWithDuration:0.3 animations:^{
-                                   [cell.mImage setAlpha:1.0];
-                               }];
-                           }
-                       }];
-    
+    API *a = [API getAPI];
+    [a loadImage:cell.mImage url:image_color];
+
     return cell;
 }
 
