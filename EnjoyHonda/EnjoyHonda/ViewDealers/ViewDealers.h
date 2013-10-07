@@ -12,7 +12,10 @@
 @interface ViewDealers : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, TTTAttributedLabelDelegate>
 
 @property (nonatomic, weak) IBOutlet UICollectionView *mCollectionView;
+@property (nonatomic, weak) IBOutlet UITextField *mTextField;
 @property (nonatomic, strong) NSArray *mArrayDealers;
 
+- (IBAction)searchTextChanged:(id)sender;
+- (IBAction)clickSearch:(id)sender;
 
 @end

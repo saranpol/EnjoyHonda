@@ -14,6 +14,7 @@
 
 @synthesize mCollectionView;
 @synthesize mArrayDealers;
+@synthesize mTextField;
 
 - (void)viewDidLoad
 {
@@ -22,7 +23,7 @@
 
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
     
-    [self updateUI];
+    [self processSearch];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,22 +44,72 @@
     [a api_dealer:^(id JSON){
         NSDictionary *json = (NSDictionary*)JSON;
         [a saveObject:json forKey:M_dealers];
-        [self updateUI];
+        [self processSearch];
     }failure:^(NSError* error){
     }];
 }
 
 - (void)updateUI {
+    [mCollectionView reloadData];
+}
+
+- (BOOL)containString:(NSString*)s text:(NSString*)text array:(NSMutableArray*)array item:(NSDictionary*)item {
+    if([text rangeOfString:s].location != NSNotFound){
+        [array addObject:item];
+        return YES;
+    }
+    return NO;
+}
+
+- (void)processSearch {
     API *a = [API getAPI];
     NSArray *data = [a getObject:M_dealers];
     if(data){
-        //self.mArrayDealers = [data objectForKey:@"data"];
-        self.mArrayDealers = data;
-        [mCollectionView reloadData];
+        if(mTextField.text.length == 0){
+            self.mArrayDealers = data;
+            [self updateUI];
+            return;
+        }
+        
+        NSMutableArray *searchResult = [NSMutableArray new];
+
+        NSString *q = mTextField.text;
+        
+        
+        for(NSDictionary *item in data){
+            if([self containString:q text:[a getText:item key:@"NameTh"] array:searchResult item:item])
+                continue;
+            
+            NSString *a1 = [[a getText:item key:@"AddressTh"] stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
+            NSString *a2 = [a getText:item key:@"StreetTh"];
+            NSString *a3 = [a getText:item key:@"SubDistrictTh"];
+            NSString *a4 = [a getText:item key:@"DistrictTh"];
+            NSString *a5 = [a getText:item key:@"ProvinceNameTh"];
+            NSString *a6 = [a getText:item key:@"Zipcode"];
+            NSString *address = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@", a1, a2, a3, a4, a5, a6];
+
+            if([self containString:q text:address array:searchResult item:item])
+                continue;
+            
+            if([self containString:q text:[a getText:item key:@"Email"] array:searchResult item:item])
+                continue;
+            if([self containString:q text:[a getText:item key:@"Phone"] array:searchResult item:item])
+                continue;
+            if([self containString:q text:[a getText:item key:@"Fax"] array:searchResult item:item])
+                continue;
+            if([self containString:q text:[a getText:item key:@"Website"] array:searchResult item:item])
+                continue;
+        }
+        
+        
+        
+        
+        self.mArrayDealers = searchResult;
+    }else{
+        self.mArrayDealers = nil;
     }
+    [self updateUI];
 }
-
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return (mArrayDealers) ? [mArrayDealers count] : 0;
@@ -88,7 +139,6 @@
     API *a = [API getAPI];
     [cell.mLabelName setText:[a getText:item key:@"NameTh"]];
 
-    
     [cell.mLabelEmail setDataDetectorTypes:NSTextCheckingTypeLink | NSTextCheckingTypePhoneNumber];
     [cell.mLabelEmail setText:[a getText:item key:@"Email" def:@"-"]];
     [self setTTTDelegate:cell.mLabelEmail];
@@ -106,7 +156,17 @@
     [self setTTTDelegate:cell.mLabelWeb];
 
     
-    [cell.mLabelAddress setText:[a getText:item key:@"AddressTh" def:@"-"]];
+    NSString *a1 = [[a getText:item key:@"AddressTh"] stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
+    NSString *a2 = [a getText:item key:@"StreetTh"];
+    NSString *a3 = [a getText:item key:@"SubDistrictTh"];
+    NSString *a4 = [a getText:item key:@"DistrictTh"];
+    NSString *a5 = [a getText:item key:@"ProvinceNameTh"];
+    NSString *a6 = [a getText:item key:@"Zipcode"];
+    NSString *address = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@", a1, a2, a3, a4, a5, a6];
+    [cell.mLabelAddress setText:address];
+    
+    [a loadImage:cell.mImageMap url:[a getText:item key:@"map"]];
+    
 
     cell.mLat = [a getText:item key:@"Latitude"];
     cell.mLong = [a getText:item key:@"Longtitude"];
@@ -114,10 +174,10 @@
     return cell;
 }
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    UICollectionReusableView *cell = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"HeaderDealer" forIndexPath:indexPath];
-    return cell;
-}
+//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+//    UICollectionReusableView *cell = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"HeaderDealer" forIndexPath:indexPath];
+//    return cell;
+//}
 
 
 
@@ -132,5 +192,16 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:p]];
 }
 
+- (IBAction)searchTextChanged:(id)sender {
+    [self processSearch];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [mTextField resignFirstResponder];
+}
+
+- (IBAction)clickSearch:(id)sender {
+    [mTextField resignFirstResponder];
+}
 
 @end

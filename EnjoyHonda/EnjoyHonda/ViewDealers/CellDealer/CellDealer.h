@@ -17,6 +17,7 @@
 @property (nonatomic, weak) IBOutlet TTTAttributedLabel *mLabelFax;
 @property (nonatomic, weak) IBOutlet TTTAttributedLabel *mLabelWeb;
 @property (nonatomic, weak) IBOutlet UILabel *mLabelAddress;
+@property (nonatomic, weak) IBOutlet UIImageView *mImageMap;
 @property (nonatomic, strong) NSString *mLat;
 @property (nonatomic, strong) NSString *mLong;
 

@@ -17,6 +17,7 @@
 @synthesize mLabelFax;
 @synthesize mLabelWeb;
 @synthesize mLabelAddress;
+@synthesize mImageMap;
 @synthesize mLat;
 @synthesize mLong;
 

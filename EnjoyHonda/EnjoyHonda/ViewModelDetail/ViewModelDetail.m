@@ -12,6 +12,7 @@
 #import "CellModelPrice.h"
 #import "CellModelRemark.h"
 #import "CellModelFeature.h"
+#import "CellModelSeparator.h"
 #import "CellBrochure.h"
 #import "CellSpec.h"
 #import "API.h"
@@ -80,7 +81,7 @@
     NSArray *price_list = [mData objectForKey:@"price_list"];
     NSArray *feature_list = [mData objectForKey:@"feature_list"];
     
-    return 1 + [price_list count] + 1 + [feature_list count] + 1 + 1;
+    return 1 + [price_list count] + 1 + [feature_list count] + 1 + 1 + 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -123,13 +124,18 @@
         [cell.mLabelDescription setText:[a getText:feature key:@"description"]];
         return cell;
     }
-    
+
     if(i < 1 + [price_list count] + 1 + [feature_list count] + 1){
+        CellModelSeparator *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CellModelSeparator" forIndexPath:indexPath];
+        return cell;
+    }
+    
+    if(i < 1 + [price_list count] + 1 + [feature_list count] + 1 + 1){
         CellBrochure *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CellBrochure" forIndexPath:indexPath];
         return cell;
     }
 
-    if(i < 1 + [price_list count] + 1 + [feature_list count] + 1 + 1){
+    if(i < 1 + [price_list count] + 1 + [feature_list count] + 1 + 1 + 1){
         CellSpec *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CellSpec" forIndexPath:indexPath];
         return cell;
     }
@@ -170,10 +176,14 @@
     }
     
     if(i < 1 + [price_list count] + 1 + [feature_list count] + 1){
-        return CGSizeMake(286, 140);
+        return CGSizeMake(286, 36);
     }
     
     if(i < 1 + [price_list count] + 1 + [feature_list count] + 1 + 1){
+        return CGSizeMake(286, 140);
+    }
+    
+    if(i < 1 + [price_list count] + 1 + [feature_list count] + 1 + 1 + 1){
         return CGSizeMake(286, 140);
     }
 
