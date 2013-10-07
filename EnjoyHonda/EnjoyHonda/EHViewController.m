@@ -66,7 +66,7 @@
                 self.mCountHilight = 0;
             
             NSDictionary *item = [hilight objectAtIndex:mCountHilight];
-            NSString *image = [item objectForKey:@"image_mobile"];
+            NSString *image = [item objectForKey:@"image"];
             
             [mImageHilight setImageWithURL:[NSURL URLWithString:image]
                           placeholderImage:mImageHilight.image
