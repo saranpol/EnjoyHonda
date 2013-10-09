@@ -91,8 +91,8 @@
     if(i == 0){
         CellModelTitle *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CellModelTitle" forIndexPath:indexPath];
         [a loadImage:cell.mImage url:[a getText:mData key:@"keyvisual_url"]];
-        [cell.mLabelName setText:[a getText:mData key:@"name"]];
-        [cell.mLabelTitle setText:[a getText:mData key:@"title_th"]];
+        [cell.mLabelName setText:[a getText:mData key:@"title_th"]];
+        [cell.mLabelTitle setText:[a getText:mData key:@"sub_title_th"]];
         [cell.mLabelDescription setText:[a getText:mData key:@"description"]];
         return cell;
     }

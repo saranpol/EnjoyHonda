@@ -297,10 +297,10 @@ NSString *sShareURL = @"http://thailandweddingshoneymoons.com";
 // Text
 - (CGFloat)getHeightOfFont:(UIFont*)font w:(CGFloat)w text:(NSString*)text {
     NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:text attributes:@{NSFontAttributeName:font}];
-    CGRect rect = [attributedText boundingRectWithSize:(CGSize){w, CGFLOAT_MAX}
+    CGRect rect = [attributedText boundingRectWithSize:(CGSize){w-10, CGFLOAT_MAX}
                                                options:NSStringDrawingUsesLineFragmentOrigin
                                                context:nil];
-    return rect.size.height;
+    return rect.size.height + 10;
 }
 
 - (NSString*)getText:(NSDictionary*)d key:(NSString*)key def:(NSString*)def {
