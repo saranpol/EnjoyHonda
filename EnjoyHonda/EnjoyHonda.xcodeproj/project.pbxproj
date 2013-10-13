@@ -46,6 +46,7 @@
 		436C7ED017FF334E00D8CA4D /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 436C7EB617FF334E00D8CA4D /* UIImageView+WebCache.m */; };
 		436C7ED217FF33C600D8CA4D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436C7ED117FF33C600D8CA4D /* MobileCoreServices.framework */; };
 		436C7ED417FF33CE00D8CA4D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436C7ED317FF33CE00D8CA4D /* SystemConfiguration.framework */; };
+		436EC75B180B4A8600C07750 /* AlignWithTopFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 436EC75A180B4A8600C07750 /* AlignWithTopFlowLayout.m */; };
 		43B117491803570100291883 /* bg_textfield.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B117281803570100291883 /* bg_textfield.png */; };
 		43B1174A1803570100291883 /* bg_textfield_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B117291803570100291883 /* bg_textfield_ipad.png */; };
 		43B1174B1803570100291883 /* btn_brochure.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B1172A1803570100291883 /* btn_brochure.png */; };
@@ -189,6 +190,8 @@
 		436C7EB617FF334E00D8CA4D /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		436C7ED117FF33C600D8CA4D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		436C7ED317FF33CE00D8CA4D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		436EC759180B4A8600C07750 /* AlignWithTopFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlignWithTopFlowLayout.h; sourceTree = "<group>"; };
+		436EC75A180B4A8600C07750 /* AlignWithTopFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlignWithTopFlowLayout.m; sourceTree = "<group>"; };
 		43B117281803570100291883 /* bg_textfield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_textfield.png; sourceTree = "<group>"; };
 		43B117291803570100291883 /* bg_textfield_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_textfield_ipad.png; sourceTree = "<group>"; };
 		43B1172A1803570100291883 /* btn_brochure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_brochure.png; sourceTree = "<group>"; };
@@ -404,6 +407,7 @@
 		436C7E8417FF334E00D8CA4D /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				436EC758180B4A8600C07750 /* AlignWithTopFlowLayout */,
 				435FAB1F1801EDB50091F880 /* TTTAttributedLabel */,
 				436C7E8517FF334E00D8CA4D /* AFNetworking */,
 				436C7E9917FF334E00D8CA4D /* SDWebImage */,
@@ -471,6 +475,15 @@
 				436C7EB617FF334E00D8CA4D /* UIImageView+WebCache.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		436EC758180B4A8600C07750 /* AlignWithTopFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				436EC759180B4A8600C07750 /* AlignWithTopFlowLayout.h */,
+				436EC75A180B4A8600C07750 /* AlignWithTopFlowLayout.m */,
+			);
+			path = AlignWithTopFlowLayout;
 			sourceTree = "<group>";
 		};
 		43B117261803570100291883 /* Images */ = {
@@ -853,6 +866,7 @@
 				436C7EB917FF334E00D8CA4D /* APIClientHttps.m in Sources */,
 				43B7EDF717F371E7000D873B /* CellModel.m in Sources */,
 				436C7EC817FF334E00D8CA4D /* SDWebImageDownloader.m in Sources */,
+				436EC75B180B4A8600C07750 /* AlignWithTopFlowLayout.m in Sources */,
 				4366241617F4E2930026A6C8 /* CellModelBrochure.m in Sources */,
 				43B7EDB217F33689000D873B /* EHAppDelegate.m in Sources */,
 				436C7EC317FF334E00D8CA4D /* MKAnnotationView+WebCache.m in Sources */,

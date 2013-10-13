@@ -16,6 +16,7 @@
 #import "CellBrochure.h"
 #import "CellSpec.h"
 #import "API.h"
+#import "AlignWithTopFlowLayout.h"
 
 @implementation ViewModelDetail
 
@@ -33,6 +34,18 @@
     [super viewDidLoad];
     
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
+    
+    API *a = [API getAPI];
+    if(a.mIsTablet){
+        AlignWithTopFlowLayout *layout = [[AlignWithTopFlowLayout alloc] init];
+        layout.minimumLineSpacing = 2.0;
+        layout.minimumInteritemSpacing = 0.0;
+        layout.itemSize = CGSizeMake(300, 300);
+        layout.headerReferenceSize = CGSizeMake(1004, 47);
+        layout.footerReferenceSize = CGSizeMake(50, 50);
+        layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+        [mCollectionView setCollectionViewLayout:layout animated:NO];
+    }
     
     [self updateUI];
 }
@@ -150,8 +163,14 @@
     NSInteger i = indexPath.row;
     API *a = [API getAPI];
     if(i == 0){
-        CGFloat h = [a getHeightOfFont:[UIFont systemFontOfSize:14.0] w:276 text:[a getText:mData key:@"description"]];
-        return CGSizeMake(286, 169 + h);
+        if(a.mIsTablet){
+            CGFloat h = [a getHeightOfFont:[UIFont systemFontOfSize:16.0] w:974 text:[a getText:mData key:@"description"]];
+            return CGSizeMake(984, 456 + h + 28);
+        }else{
+            CGFloat h = [a getHeightOfFont:[UIFont systemFontOfSize:14.0] w:276 text:[a getText:mData key:@"description"]];
+            return CGSizeMake(286, 169 + h);
+            
+        }
     }
     
     NSArray *price_list = [mData objectForKey:@"price_list"];
@@ -159,24 +178,58 @@
     
     if(i < 1 + [price_list count]){
         //CellModelPrice
-        return CGSizeMake(286, 40);
+        if(a.mIsTablet){
+            if(i == 1 + [price_list count] - 1){
+                NSUInteger c = [price_list count];
+                if((c%3) == 1)
+                    return CGSizeMake(984, 40);
+                if((c%3) == 2)
+                    return CGSizeMake(635, 40);
+            }
+            return CGSizeMake(286, 40);
+        }else{
+            return CGSizeMake(286, 40);
+        }
     }
     
     if(i < 1 + [price_list count] + 1){
         //CellModelRemark
-        return CGSizeMake(286, 70);
+        if(a.mIsTablet){
+            return CGSizeMake(974, 70);
+        }else{
+            return CGSizeMake(286, 70);
+        }
     }
     
     if(i < 1 + [price_list count] + 1 + [feature_list count]){
+        float w = 286;
+        float y = 202;
+        if(a.mIsTablet){
+            w = 300;
+            y = 209;
+            if(i == 1 + [price_list count] + 1 + [feature_list count] - 1){
+                NSUInteger c = [feature_list count];
+                if((c%3) == 1)
+                    w = 984;
+                if((c%3) == 2)
+                    w = 655;
+            }
+        }
+        
         //CellModelFeature
         NSInteger j = i - 1 - [price_list count] - 1;
         NSDictionary *feature = [feature_list objectAtIndex:j];
         CGFloat h = [a getHeightOfFont:[UIFont systemFontOfSize:14.0] w:276 text:[a getText:feature key:@"description"]];
-        return CGSizeMake(286, 181 + h + 24);
+        return CGSizeMake(w, y + h + 24);
     }
     
     if(i < 1 + [price_list count] + 1 + [feature_list count] + 1){
-        return CGSizeMake(286, 36);
+        // CellModelSeparator
+        if(a.mIsTablet){
+            return CGSizeMake(974, 36);
+        }else{
+            return CGSizeMake(286, 36);
+        }
     }
     
     if(i < 1 + [price_list count] + 1 + [feature_list count] + 1 + 1){
