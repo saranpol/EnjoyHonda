@@ -124,6 +124,10 @@
 
     if(i < 1 + [price_list count] + 1){
         CellModelRemark *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CellModelRemark" forIndexPath:indexPath];
+        if([mData objectForKey:@"note_th"] && [[mData objectForKey:@"note_th"] length] > 0)
+            [cell.mLabelRemark setText:[NSString stringWithFormat:@"หมายเหตุ: %@", [mData objectForKey:@"note_th"]]];
+        else
+            [cell.mLabelRemark setText:@""];
         return cell;
     }
 
