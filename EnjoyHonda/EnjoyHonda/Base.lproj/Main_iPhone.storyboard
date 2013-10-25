@@ -127,7 +127,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="151" height="151"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="test2.png" translatesAutoresizingMaskIntoConstraints="NO" id="yKG-eT-JTq">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yKG-eT-JTq">
                                                     <rect key="frame" x="0.0" y="0.0" width="151" height="151"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -217,32 +217,33 @@
                                             <rect key="frame" x="0.0" y="0.0" width="286" height="315"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test.png" translatesAutoresizingMaskIntoConstraints="NO" id="PML-Pj-T7C">
-                                                    <rect key="frame" x="0.0" y="0.0" width="286" height="108"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PML-Pj-T7C">
+                                                    <rect key="frame" x="0.0" y="0.0" width="286" height="163"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="108" id="O3c-9Q-24x"/>
+                                                        <constraint firstAttribute="width" constant="286" id="FAf-fD-6eP"/>
+                                                        <constraint firstAttribute="height" constant="163" id="Mlc-3y-9eU"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALL-NEW CR-V" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="kfc-zJ-rPO">
-                                                    <rect key="frame" x="5" y="108" width="276" height="36"/>
+                                                    <rect key="frame" x="5" y="165" width="276" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="สู่มาตรฐานใหม่ของการใช้ชีวิต" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="kQh-d0-pui">
-                                                    <rect key="frame" x="5" y="135" width="276" height="30"/>
+                                                    <rect key="frame" x="5" y="191" width="276" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="soT-7w-jYV"/>
+                                                        <constraint firstAttribute="height" constant="30" id="kcZ-qw-GjM"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="276" translatesAutoresizingMaskIntoConstraints="NO" id="MSp-7E-gBE">
-                                                    <rect key="frame" x="5" y="169" width="276" height="141"/>
+                                                    <rect key="frame" x="5" y="222" width="276" height="88"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <string key="text">ก้าวไปสู่อีกขั้นของชีวิต กับมาตรฐานใหม่แห่งยนตรกรรมสปอร์ตอเนกประสงค์ ฮอนด้า ซีอาร์-วี ใหม่ ที่มาพร้อมกับภาพลักษณ์หรูหรา และโดดเด่นทุกองศารอบคัน สัมผัสประสบการณ์ใหม่ของความสะดวกสบาย อีกระดับด้วยเทคโนโลยีอัจฉริยะล้ำสมัย ที่ให้คุณควบคุมทุกการสั่งการได้อย่างสะดวก และง่ายดายยิ่งขึ้น พร้อมด้วยระบบความปลอดภัย ที่ทำงานผสานกันในทุกส่วน เพื่อรองรับทุกการเดินทางในการใช้ชีวิตของคุณ</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -253,19 +254,18 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="MSp-7E-gBE" firstAttribute="leading" secondItem="kQh-d0-pui" secondAttribute="leading" id="1Gh-la-Bbd"/>
-                                            <constraint firstItem="kfc-zJ-rPO" firstAttribute="top" secondItem="PML-Pj-T7C" secondAttribute="bottom" id="EN4-Al-0l2"/>
-                                            <constraint firstAttribute="trailing" secondItem="PML-Pj-T7C" secondAttribute="trailing" id="Ewc-eu-OGU"/>
-                                            <constraint firstItem="MSp-7E-gBE" firstAttribute="trailing" secondItem="kQh-d0-pui" secondAttribute="trailing" id="ILG-8w-r2S"/>
-                                            <constraint firstItem="PML-Pj-T7C" firstAttribute="leading" secondItem="bT4-GA-yoP" secondAttribute="leading" id="Ije-wB-fdb"/>
-                                            <constraint firstItem="MSp-7E-gBE" firstAttribute="top" secondItem="kfc-zJ-rPO" secondAttribute="bottom" constant="25" id="Kqa-FB-p3U"/>
-                                            <constraint firstAttribute="bottom" secondItem="MSp-7E-gBE" secondAttribute="bottom" constant="5" id="MdJ-o2-uuH"/>
-                                            <constraint firstItem="kQh-d0-pui" firstAttribute="top" secondItem="PML-Pj-T7C" secondAttribute="bottom" constant="27" id="N7m-B9-Uew"/>
-                                            <constraint firstItem="MSp-7E-gBE" firstAttribute="top" secondItem="kQh-d0-pui" secondAttribute="bottom" constant="4" id="cje-cT-8sp"/>
-                                            <constraint firstItem="kfc-zJ-rPO" firstAttribute="centerX" secondItem="PML-Pj-T7C" secondAttribute="centerX" id="qFi-1c-cl1"/>
-                                            <constraint firstItem="kfc-zJ-rPO" firstAttribute="leading" secondItem="kQh-d0-pui" secondAttribute="leading" id="rpZ-1W-oZP"/>
-                                            <constraint firstItem="kfc-zJ-rPO" firstAttribute="trailing" secondItem="kQh-d0-pui" secondAttribute="trailing" id="xl9-fg-2bW"/>
-                                            <constraint firstItem="PML-Pj-T7C" firstAttribute="top" secondItem="bT4-GA-yoP" secondAttribute="top" id="zsZ-xw-Nkd"/>
+                                            <constraint firstItem="MSp-7E-gBE" firstAttribute="top" secondItem="kQh-d0-pui" secondAttribute="bottom" constant="1" id="0KL-Ev-kli"/>
+                                            <constraint firstAttribute="bottom" secondItem="MSp-7E-gBE" secondAttribute="bottom" constant="5" id="6F3-oo-4rh"/>
+                                            <constraint firstItem="PML-Pj-T7C" firstAttribute="leading" secondItem="bT4-GA-yoP" secondAttribute="leading" id="K4w-yK-fAB"/>
+                                            <constraint firstItem="kfc-zJ-rPO" firstAttribute="top" secondItem="PML-Pj-T7C" secondAttribute="bottom" constant="2" id="Ktg-TM-oT7"/>
+                                            <constraint firstItem="MSp-7E-gBE" firstAttribute="top" secondItem="kfc-zJ-rPO" secondAttribute="bottom" constant="21" id="LpA-o5-BAq"/>
+                                            <constraint firstItem="PML-Pj-T7C" firstAttribute="centerX" secondItem="kfc-zJ-rPO" secondAttribute="centerX" id="WiU-hH-gJh"/>
+                                            <constraint firstItem="kQh-d0-pui" firstAttribute="top" secondItem="PML-Pj-T7C" secondAttribute="bottom" constant="28" id="aWE-0I-vIL"/>
+                                            <constraint firstItem="kQh-d0-pui" firstAttribute="leading" secondItem="kfc-zJ-rPO" secondAttribute="leading" id="cr5-bX-cWg"/>
+                                            <constraint firstItem="MSp-7E-gBE" firstAttribute="leading" secondItem="kQh-d0-pui" secondAttribute="leading" id="dlT-bL-Rba"/>
+                                            <constraint firstItem="kfc-zJ-rPO" firstAttribute="trailing" secondItem="kQh-d0-pui" secondAttribute="trailing" id="dmf-6c-7s4"/>
+                                            <constraint firstItem="kQh-d0-pui" firstAttribute="trailing" secondItem="MSp-7E-gBE" secondAttribute="trailing" id="kaC-ay-1Vx"/>
+                                            <constraint firstItem="PML-Pj-T7C" firstAttribute="top" secondItem="bT4-GA-yoP" secondAttribute="top" id="s7X-cu-Ohc"/>
                                         </constraints>
                                         <size key="customSize" width="286" height="315"/>
                                         <connections>
@@ -556,7 +556,7 @@
                                                     <rect key="frame" x="12" y="67" width="24" height="24"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="icon_phone.png" translatesAutoresizingMaskIntoConstraints="NO" id="DMC-s1-Ejc">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="icon_fax.png" translatesAutoresizingMaskIntoConstraints="NO" id="DMC-s1-Ejc">
                                                     <rect key="frame" x="12" y="99" width="24" height="24"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -585,7 +585,7 @@
                                                     <color key="textColor" red="0.46666669845581055" green="0.46666669845581055" blue="0.46666669845581055" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="icon_phone.png" translatesAutoresizingMaskIntoConstraints="NO" id="VuD-p2-S8V">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="icon_website.png" translatesAutoresizingMaskIntoConstraints="NO" id="VuD-p2-S8V">
                                                     <rect key="frame" x="12" y="129" width="24" height="24"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -741,14 +741,15 @@
         <image name="btn_menu.png" width="19" height="17"/>
         <image name="btn_search.png" width="35" height="35"/>
         <image name="btn_spec.png" width="225" height="113"/>
+        <image name="icon_fax.png" width="24" height="24"/>
         <image name="icon_mail.png" width="24" height="24"/>
         <image name="icon_map.png" width="90" height="23"/>
         <image name="icon_marker.png" width="24" height="23"/>
         <image name="icon_phone.png" width="24" height="24"/>
+        <image name="icon_website.png" width="24" height="24"/>
         <image name="line.png" width="1" height="1"/>
         <image name="separator_shadow.png" width="301" height="20"/>
         <image name="test.png" width="570" height="212"/>
-        <image name="test2.png" width="396" height="396"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

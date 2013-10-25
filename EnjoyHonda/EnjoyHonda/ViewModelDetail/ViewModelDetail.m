@@ -169,10 +169,10 @@
     if(i == 0){
         if(a.mIsTablet){
             CGFloat h = [a getHeightOfFont:[UIFont systemFontOfSize:16.0] w:974 text:[a getText:mData key:@"description"]];
-            return CGSizeMake(984, 456 + h + 28);
+            return CGSizeMake(984, 640 + h + 9);
         }else{
             CGFloat h = [a getHeightOfFont:[UIFont systemFontOfSize:14.0] w:276 text:[a getText:mData key:@"description"]];
-            return CGSizeMake(286, 169 + h);
+            return CGSizeMake(286, 222 + h);
             
         }
     }
