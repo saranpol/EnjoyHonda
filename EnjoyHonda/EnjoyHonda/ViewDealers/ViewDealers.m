@@ -46,6 +46,9 @@
         [a saveObject:json forKey:M_dealers];
         [self processSearch];
     }failure:^(NSError* error){
+        NSDictionary *data = [a getObject:M_dealers];
+        if(!data)
+            [a showPleaseConnectInternet];
     }];
 }
 

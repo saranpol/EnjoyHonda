@@ -13,6 +13,7 @@
 @property (nonatomic, weak) IBOutlet UICollectionView *mCollectionMenu;
 @property (nonatomic, weak) IBOutlet UIImageView *mImageHilight;
 @property (nonatomic, assign) NSInteger mCountHilight;
+@property (nonatomic, strong) UIImageView *mImagePopupMenu;
 
 - (IBAction)clickMenu:(id)sender;
 

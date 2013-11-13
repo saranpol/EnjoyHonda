@@ -47,6 +47,9 @@
         if(!mArrayModels)
             [self updateUI];
     }failure:^(NSError* error){
+        NSDictionary *data = [a getObject:M_models];
+        if(!data)
+            [a showPleaseConnectInternet];
     }];
 }
 

@@ -18,6 +18,7 @@
 @synthesize mCollectionMenu;
 @synthesize mImageHilight;
 @synthesize mCountHilight;
+@synthesize mImagePopupMenu;
 
 - (void)viewDidLoad
 {
@@ -27,6 +28,14 @@
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
  
     [mCollectionMenu setHidden:YES];
+    
+    self.mImagePopupMenu = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"popup_menu.png"]];
+    CGRect r = mImagePopupMenu.frame;
+    r.origin.x = 10;
+    r.origin.y = 30;
+    [mImagePopupMenu setFrame:r];
+    [self.navigationController.view addSubview:mImagePopupMenu];
+    
     
     [self updateUI];
 }
@@ -50,6 +59,9 @@
         [a saveObject:json forKey:M_hilight];
         [self updateUI];
     }failure:^(NSError* error){
+        NSDictionary *data = [a getObject:M_hilight];
+        if(!data)
+            [a showPleaseConnectInternet];
     }];
 
 }
@@ -130,6 +142,14 @@
 
 
 - (IBAction)clickMenu:(id)sender {
+    if(![mImagePopupMenu isHidden]){
+        [UIView animateWithDuration:0.5 animations:^{
+            [mImagePopupMenu setAlpha:0];
+        }completion:^(BOOL finished){
+            [mImagePopupMenu setHidden:YES];
+        }];
+    }
+         
     if(mCollectionMenu.hidden){
         [mCollectionMenu setHidden:NO];
         CGRect f = mCollectionMenu.frame;

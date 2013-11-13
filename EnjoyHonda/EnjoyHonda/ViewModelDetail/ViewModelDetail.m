@@ -74,6 +74,9 @@
              [a saveObject:json forKey:[self getModelKey]];
              [self updateUI];
          }failure:^(NSError* error){
+             NSDictionary *data = [a getObject:[self getModelKey]];
+             if(!data)
+                 [a showPleaseConnectInternet];
          }];
 }
 

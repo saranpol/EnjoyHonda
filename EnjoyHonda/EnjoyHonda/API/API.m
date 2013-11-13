@@ -370,4 +370,15 @@ NSString *sShareURL = @"http://thailandweddingshoneymoons.com";
 
 
 
+- (void)showPleaseConnectInternet {
+    UIAlertView *v = [[UIAlertView alloc] initWithTitle:@"กรุณาเชื่อมต่ออินเตอร์เน็ต"
+                                                message:nil
+                                               delegate:nil
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+    [v show];
+}
+
+
+
 @end

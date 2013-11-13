@@ -89,7 +89,7 @@ typedef void (^APIFail)(NSError*);
 - (NSDictionary*)getUser;
 - (void)saveUser:(NSDictionary*)data;
 
-
+- (void)showPleaseConnectInternet;
 
 @end
 
