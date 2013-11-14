@@ -1047,7 +1047,7 @@
 				GCC_PREFIX_HEADER = "EnjoyHonda/EnjoyHonda-Prefix.pch";
 				INFOPLIST_FILE = "EnjoyHonda/EnjoyHonda-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "D47D3FAD-E460-4796-ADC3-429EB2E1C405";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

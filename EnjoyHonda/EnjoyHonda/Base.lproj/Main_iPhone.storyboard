@@ -19,6 +19,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7rQ-2G-mGh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                             </imageView>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" delaysContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-PD-Tds">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
@@ -71,6 +72,11 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="D6K-yl-VPa" appends="YES" id="kRM-pg-kLX"/>
+                            <outletCollection property="gestureRecognizers" destination="u7C-iT-zIl" appends="YES" id="XdQ-CG-3F7"/>
+                            <outletCollection property="gestureRecognizers" destination="EJO-u3-sTH" appends="YES" id="ooM-Qs-LOq"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="First" id="JZe-qf-RvZ">
                         <barButtonItem key="backBarButtonItem" title=" " id="Y17-JP-lsQ"/>
@@ -94,6 +100,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="D6K-yl-VPa">
+                    <connections>
+                        <action selector="clickImage:" destination="vXZ-lx-hvc" id="WsW-Ry-JfC"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="KRv-ih-10c"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="u7C-iT-zIl">
+                    <connections>
+                        <action selector="swipeImageRight:" destination="vXZ-lx-hvc" id="eml-fU-5nb"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="jBg-EE-Eif"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="EJO-u3-sTH">
+                    <connections>
+                        <action selector="swipeImageLeft:" destination="vXZ-lx-hvc" id="rt1-rh-mZO"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="Whl-0e-2uD"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="653" y="-62"/>
         </scene>

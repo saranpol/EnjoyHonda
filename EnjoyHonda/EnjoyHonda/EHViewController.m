@@ -19,6 +19,7 @@
 @synthesize mImageHilight;
 @synthesize mCountHilight;
 @synthesize mImagePopupMenu;
+@synthesize mWillSaveImage;
 
 - (void)viewDidLoad
 {
@@ -68,14 +69,18 @@
 
 - (void)updateUI {
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(updateUI) object:nil];
+    if(mWillSaveImage)
+        return;
     
     API *a = [API getAPI];
     NSDictionary *data = [a getObject:M_hilight];
     if(data){
         NSArray *hilight = [data objectForKey:@"hilight"];
         if(hilight){
-            if(mCountHilight >= [hilight count])
+            if(mCountHilight >= (int)[hilight count])
                 self.mCountHilight = 0;
+            if(mCountHilight < 0)
+                self.mCountHilight = [hilight count] - 1;
             
             NSDictionary *item = [hilight objectAtIndex:mCountHilight];
             NSString *image = [item objectForKey:@"image"];
@@ -172,5 +177,41 @@
         }];
     }
 }
+
+
+- (IBAction)clickImage:(id)sender {
+    UILongPressGestureRecognizer *g = (UILongPressGestureRecognizer*)sender;
+    if(g.state == UIGestureRecognizerStateBegan){
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                                 delegate:self
+                                                        cancelButtonTitle:@"Cancel"
+                                                   destructiveButtonTitle:nil
+                                                        otherButtonTitles:@"Save Photo", nil];
+        actionSheet.actionSheetStyle = UIActionSheetStyleAutomatic;
+        [actionSheet showInView:self.view];
+        self.mWillSaveImage = YES;
+    }
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(buttonIndex == 0){
+        UIImageWriteToSavedPhotosAlbum(mImageHilight.image, nil, nil, nil);
+    }
+    self.mWillSaveImage = NO;
+    [self performSelector:@selector(updateUI) withObject:nil afterDelay:3.0];
+}
+
+- (IBAction)swipeImageRight:(id)sender {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(updateUI) object:nil];
+    mCountHilight--;
+    mCountHilight--;
+    [self updateUI];
+}
+
+- (IBAction)swipeImageLeft:(id)sender {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(updateUI) object:nil];
+    [self updateUI];
+}
+
 
 @end
