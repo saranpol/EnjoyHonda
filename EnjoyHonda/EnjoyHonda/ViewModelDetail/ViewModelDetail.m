@@ -279,15 +279,15 @@
     NSArray *price_list = [mData objectForKey:@"price_list"];
     NSArray *feature_list = [mData objectForKey:@"feature_list"];
 
-    if(i < 1 + [price_list count] + 1 + [feature_list count]){
+    if(i < 1 + [price_list count] + 1 + [feature_list count] + 1){
         return;
     }
     
-    if(i < 1 + [price_list count] + 1 + [feature_list count] + 1){
+    if(i < 1 + [price_list count] + 1 + [feature_list count] + 1 + 1){
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[a getText:mData key:@"brochure_url"]]];
     }
     
-    if(i < 1 + [price_list count] + 1 + [feature_list count] + 1 + 1){
+    if(i < 1 + [price_list count] + 1 + [feature_list count] + 1 + 1 + 1){
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[a getText:mData key:@"spec_url"]]];
     }
     
